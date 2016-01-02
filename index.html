@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hundred Proof</title>
+		<link rel="stylesheet" href="css/proof.css" type="text/css" media="all">
+        <script src="https://code.jquery.com/jquery-3.0.0-alpha1.js"></script>
+        <script src="scripts/jquery.autosize.input.min.js"></script>
+	</head>
+	<body>
+		<div class="page-wrap">
+    		<div class="hp-app">   
+            	<h1>Hundred Proof</h1>
+                <p class="hp-instructions">Get a bottle of uncut whiskey and unsure how much water to add for sipping? Making homemade liqueur and not sure how much to dilute to get a desired drinking proof?</p>
+                <p class="hp-instructions">Don't let math get in the way of your drinking.</p>
+            	<div class="hp-buttongroup">    
+                	<input type="radio" id="bg1_1" name="bg1" data-visibility="abv">
+                	<label for="bg1_1">ABV</label>
+                	<input type="radio" id="bg1_2" name="bg1" data-visibility="proof" checked>
+                	<label for="bg1_2">Proof</label>
+            	</div>
+            	
+            	<div class="hp-inputs" data-visibility="proof"> 
+                	<div class="hp-input__group">   
+                    	<label class="hp-input__label">I'm making</label>
+                    	<input type="number" class="hp-input input-resize" id="amount" value="1">
+                    	<span class="hp-unit">ounce<span class="plural is-hidden">s</span></span>.
+                	</div>
+    
+                	<div class="hp-input__group">   
+                    	<label class="hp-input__label">I'm starting with <span data-visibility="abv">ABV</span></label>
+                    	<input type="number" class="hp-input input-resize" id="abv-starting" value="100"><span class="hp-input__units"><span data-visibility="abv">%</span>
+                        	<span data-visibility="proof">proof</span>
+                    	</span> and
+                    	<label class="hp-input__label">I want to end up with <span data-visibility="abv">ABV</span></label>
+                    	<input type="text" class="hp-input input-resize" id="abv-desired" value="80"><span class="hp-input__units"><span data-visibility="abv">%</span>
+                    	<span data-visibility="proof">proof</span></span>.
+                	</div>
+            	</div>
+            	<div class="hp-error">  
+                	<span data-error="1" class="is-hidden">You need to make more than 0 ounces.</span>
+                	<span data-error="2" class="is-hidden">Your desired ABV can't be more than starting. Chemistry won't let us remove water.</span>
+            	</div>
+            	<button class="hp-button hp-button--block" id="convert">Another, Barkeep.</button>
+        		<div class="hp-result is-hidden"> 
+            		You should add 
+            		<span class="hp-result__number" id="result-oz"></span>
+            		<span class="hp-unit">ounce<span class="plural is-hidden">s</span></span>
+            		
+            		or about
+            		
+            		<span class="hp-result__number" id="result-translate"></span>
+            		<span class="hp-unit">
+                		<span id="result-teaspoons" >teaspoon</span><span id="result-cups" class="is-hidden">cup</span><span class="plural is-hidden">s</span></span>
+                    of water.
+        		</div>
+    		</div>
+		</div>
+		<script src="scripts/proof.js"></script>
+		<footer> 
+    		2016 Zach Steiner
+		</footer>
+	</body>
+</html>

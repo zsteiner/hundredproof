@@ -1,0 +1,76 @@
+.hp-input {
+    background: none;
+    font-size: 1em;
+    width: 1em;
+    border: none;
+    border-bottom: .15em dotted $info;
+    text-align: center;
+    
+    &__group {
+        line-height: 1.5;
+        margin: 1em 0;
+        font-size: 1.5em;
+    }
+
+    &__label {
+        
+    }
+
+    &__units {
+        
+    }
+}
+
+.has-error {
+    background: transparentize($alert, .7);
+}
+
+.hp-buttongroup {
+    $bg-color: $secondary;
+
+    width: 100%;
+    display: flex;
+    margin-bottom: spacer(2);
+    
+    label {
+        display: block;
+        flex: 1 0 auto;
+        text-align: center;
+        padding: .5em;
+        color: $bg-color;
+        border: .1em solid $bg-color;
+        cursor: pointer;
+    }
+    
+    input {
+        position: absolute;
+        left: -999px;
+    }
+
+        input:checked + label {
+            background: $bg-color;
+            color: white;
+        }    
+
+}
+
+.hp-button {
+    background-color: $secondary;
+    border: 0;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: .5em;
+    font-size: 1.25em;
+    
+    &--block {
+        margin: 1em 0;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    margin: 0; 
+}

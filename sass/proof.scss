@@ -1,0 +1,42 @@
+@import "bourbon", "neat";
+@import "../../global/sass/reset";
+@import "../../global/sass/utility";
+@import "../../global/sass/variables";
+@import "../../global/sass/footer-sticky";
+@import "../../global/sass/typography";
+
+.hp-app {
+    margin: 0 auto;
+    max-width: 32rem;
+    padding: spacer(1);
+}
+
+.hp-result {
+    margin: spacer(2) 0;
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+.hp-error {
+    color: $alert;
+    font-size: 1.25em;
+    line-height: 1.25;
+    margin: spacer(1) 0;
+}
+
+.hp-instructions {
+    font-size: .875em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+[data-visibility="proof"] [data-visibility="abv"] {
+    display: none;
+}
+
+[data-visibility="abv"] [data-visibility="proof"] {
+    display: none;
+}
+
+
+@import "partials/inputs";

@@ -1,0 +1,219 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: " ";
+  content: none; }
+
+:focus {
+  outline: 0; }
+
+*:before {
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.is-hidden {
+  display: none; }
+
+html, body {
+  height: 100%; }
+
+.page-wrap {
+  margin-bottom: -3em;
+  min-height: 100%; }
+  @media screen and (max-width: 770px) {
+    .page-wrap {
+      margin-bottom: -2rem !important; } }
+
+.page-wrap:after {
+  display: block;
+  content: "";
+  z-index: -1; }
+
+footer, .page-wrap:after {
+  height: 3em; }
+  @media screen and (max-width: 770px) {
+    footer, .page-wrap:after {
+      height: 2rem; } }
+
+footer {
+  padding: 1rem; }
+  @media screen and (max-width: 770px) {
+    footer {
+      padding: 0.5rem 1rem !important; } }
+
+body {
+  font-weight: 400;
+  font-family: Work Sans, Helvetica, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: .5em;
+  line-height: 1.25; }
+
+h1 {
+  font-size: 3em;
+  font-weight: 300; }
+
+h2 {
+  font-size: 2.5em; }
+
+h3 {
+  font-size: 2em; }
+
+h4 {
+  font-size: 1.75em; }
+
+h5 {
+  font-size: 1.5em; }
+
+p {
+  line-height: 1.5em; }
+  p + p {
+    margin-top: 1rem; }
+
+.subtitle {
+  font-size: 1.25em;
+  color: #959EA5; }
+
+a {
+  color: #4A90E2;
+  text-decoration: none; }
+
+.hp-app {
+  margin: 0 auto;
+  max-width: 32rem;
+  padding: 1rem; }
+
+.hp-result {
+  margin: 2rem 0;
+  font-size: 1.25em;
+  line-height: 1.5; }
+
+.hp-error {
+  color: #FE3D42;
+  font-size: 1.25em;
+  line-height: 1.25;
+  margin: 1rem 0; }
+
+.hp-instructions {
+  font-size: .875em;
+  line-height: 1.5;
+  margin-bottom: 1em; }
+
+[data-visibility="proof"] [data-visibility="abv"] {
+  display: none; }
+
+[data-visibility="abv"] [data-visibility="proof"] {
+  display: none; }
+
+.hp-input {
+  background: none;
+  font-size: 1em;
+  width: 1em;
+  border: none;
+  border-bottom: 0.15em dotted #959EA5;
+  text-align: center; }
+  .hp-input__group {
+    line-height: 1.5;
+    margin: 1em 0;
+    font-size: 1.5em; }
+
+.has-error {
+  background: rgba(254, 61, 66, 0.3); }
+
+.hp-buttongroup {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem; }
+  .hp-buttongroup label {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    text-align: center;
+    padding: .5em;
+    color: #4A90E2;
+    border: 0.1em solid #4A90E2;
+    cursor: pointer; }
+  .hp-buttongroup input {
+    position: absolute;
+    left: -999px; }
+  .hp-buttongroup input:checked + label {
+    background: #4A90E2;
+    color: white; }
+
+.hp-button {
+  background-color: #4A90E2;
+  border: 0;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: .5em;
+  font-size: 1.25em; }
+  .hp-button--block {
+    margin: 1em 0; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0; }

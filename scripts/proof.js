@@ -52,20 +52,31 @@ function isPlural(state) {
            var optionText = $(this).text();
            $(this).text(optionText.slice(0, -1));
         });
+        
         $('#amount-units').removeClass('is-plural');
     }
 }
 
-function single(target, value) {    
+function plural(target, value) {    
     value = parseFloat(value);
     
     if(value === 1) {
         target.next('.hp-unit').children('.plural').addClass('is-hidden');
-        isPlural(false);    
     }
     
     else {
         target.next('.hp-unit').children('.plural').removeClass('is-hidden');    
+    }
+}
+
+function pluralSelect(target, value) {    
+    value = parseFloat(value);
+    
+    if(value === 1) {
+        isPlural(false);    
+    }
+    
+    else {
         isPlural(true);    
     }
 }
@@ -116,6 +127,8 @@ function data() {
     desiredABV = $('#abv-desired').val();
     
     convert();
+    pluralSelect($('#amount'), amount);
+
     
     amount = parseFloat(amount);
     startingABV = parseFloat(startingABV);
@@ -142,18 +155,18 @@ function results() {
         $('.hp-results').removeClass('is-hidden'); 
     }
 
-    single($('#result-oz'), amountWaterOz.toFixed(2));
+    plural($('#result-oz'), amountWaterOz.toFixed(2));
     $('#result-oz').text(+(amountWaterOz).toFixed(2));
 
     if(amountWaterOz >= 2 ) {
-        single($('#result-translate'), amountWaterCups.toFixed(2));
+        plural($('#result-translate'), amountWaterCups.toFixed(2));
         $('#result-translate').text(+(amountWaterCups).toFixed(2));
         $('#result-cups').removeClass('is-hidden');
         $('#result-teaspoons').addClass('is-hidden');
     }
     
     else {
-        single($('#result-translate'), amountWaterTeaspoon.toFixed(2));
+        plural($('#result-translate'), amountWaterTeaspoon.toFixed(2));
         $('#result-translate').text(+(amountWaterTeaspoon).toFixed(2));    
         $('#result-teaspoons').removeClass('is-hidden');
         $('#result-cups').addClass('is-hidden');
@@ -193,12 +206,10 @@ $('.hp-input').keyup(function(){
     dilute();
     results();   
     
-    single($(this), value);
+    plural($(this), value);
 });
 
 $('#amount-units').change(function(){
-    amountUnits = $(this).val();
-
     data();
     dilute();
     results();    

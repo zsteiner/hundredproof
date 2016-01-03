@@ -12,6 +12,23 @@
         <script src="scripts/jquery.autosize.input.min.js"></script>
 	</head>
 	<body>
+        <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+        <symbol id="icon-cup" viewBox="0 0 1408 1024">
+        <title>cup</title>
+        <path class="path1" d="M1394.347 677.547l-107.52-648.533c-1.707-8.533-8.533-13.653-17.067-13.653h-1216.853c-5.12 0-10.24 1.707-11.947 5.12-10.24 11.947-34.133 39.253-25.6 63.147 6.827 17.067 29.013 20.48 58.027 25.6 18.773 3.413 39.253 6.827 59.733 13.653 30.72 11.947 49.493 73.387 52.907 90.453 1.707 5.12 151.893 781.653 151.893 781.653 1.707 8.533 8.533 13.653 17.067 13.653h588.8c8.533 0 15.36-5.12 17.067-13.653 0 0 133.12-735.573 141.653-761.173s42.667-114.347 73.387-114.347c22.187 25.6 51.2 215.040 66.56 327.68 25.6 177.493 35.84 225.28 51.2 235.52 3.413 1.707 5.12 3.413 6.827 5.12 0 0 0 1.707 0 1.707 3.413 8.533 6.827 8.533 27.307 17.067 8.533 3.413 17.067 5.12 25.6 5.12 6.827 0 13.653-1.707 18.773-3.413 15.36-6.827 20.48-18.773 20.48-20.48 1.707-3.413 3.413-6.827 1.707-10.24zM1358.507 677.547c-1.707 1.707-6.827 1.707-18.773-1.707-3.413-1.707-6.827-1.707-8.533-3.413-3.413-6.827-10.24-10.24-15.36-15.36-10.24-18.773-25.6-126.293-39.253-215.040-39.253-269.653-58.027-353.28-95.573-356.693-61.44-5.12-93.867 85.333-107.52 124.587-8.533 25.6-66.56 339.627-104.107 558.080h-638.293l-102.4-542.72c-1.707-5.12-13.653-109.227-85.333-133.12-22.187-10.24-44.373-13.653-64.853-17.067-10.24-1.707-22.187 0-30.72-6.827 1.707-5.12 6.827-11.947 11.947-18.773h1194.667l104.107 628.053c1.707 0 0 0 0 0z"></path>
+        <path class="path2" d="M595.627 213.333h-196.267c-10.24 0-17.067 6.827-17.067 17.067s6.827 17.067 17.067 17.067h179.2v174.080h-112.64c-10.24 0-17.067 6.827-17.067 17.067s6.827 17.067 17.067 17.067h112.64v170.667h-126.293c-10.24 0-17.067 6.827-17.067 17.067s6.827 17.067 17.067 17.067h143.36c10.24 0 17.067-6.827 17.067-17.067v-413.013c0-10.24-8.533-17.067-17.067-17.067z"></path>
+        </symbol>
+        <symbol id="icon-jigger" viewBox="0 0 1024 1024">
+        <title>jigger</title>
+        <path class="path1" d="M971.093 974.507h-44.373l-261.12-399.36c-3.413-3.413-6.827-6.827-11.947-6.827l281.6-518.827h35.84c10.24 0 17.067-6.827 17.067-17.067s-6.827-17.067-17.067-17.067h-918.187c-10.24 0-17.067 6.827-17.067 17.067s6.827 17.067 17.067 17.067h35.84l281.6 517.12c-5.12 0-10.24 3.413-11.947 6.827l-261.12 401.067h-44.373c-10.24 0-17.067 6.827-17.067 17.067s6.827 17.067 17.067 17.067h918.187c10.24 0 17.067-6.827 17.067-17.067s-8.533-17.067-17.067-17.067zM128 49.493h317.44l49.493 496.64h-97.28l-269.653-496.64zM382.293 600.747h114.347l-39.253 373.76h-319.147l244.053-373.76z"></path>
+        </symbol>
+        <symbol id="icon-shot" viewBox="0 0 1024 1024">
+        <title>shot</title>
+        <path class="path1" d="M945.493 20.48c-3.413-3.413-8.533-5.12-11.947-5.12h-841.387c-5.12 0-10.24 1.707-13.653 5.12s-5.12 8.533-3.413 13.653l112.64 957.44c1.707 8.533 8.533 15.36 17.067 15.36h614.4c8.533 0 15.36-6.827 17.067-15.36l112.64-957.44c1.707-5.12 0-10.24-3.413-13.653zM841.387 662.187l-657.067 1.707-73.387-614.4h800.427l-69.973 612.693z"></path>
+        </symbol>
+        </defs>
+        </svg>
 		<div class="page-wrap">
     		<header class="hp-header">    
             	<h1 class="hp-heading hp-heading--logo">
@@ -153,7 +170,7 @@
         		<section class="hp-section hp-section--heading">    
                 	<h4 class="hp-heading">Choose One:</h4>
 
-                	<div class="hp-buttongroup">    
+                	<div class="hp-buttongroup hp-buttongroup--main">    
                     	<input type="radio" id="bg1_1" name="bg1" data-visibility="abv">
                     	<label for="bg1_1">ABV</label>
                     	<input type="radio" id="bg1_2" name="bg1" data-visibility="proof" checked>
@@ -164,18 +181,33 @@
                 	<div class="hp-app__col"> 
                     	<div class="hp-inputs" data-visibility="proof"> 
                         	<h4 class="hp-heading">What are we making today?</h3>  
-                        	<div class="hp-input__group">   
-                            	<label class="hp-input__label">I'm making</label>
-                            	<input type="text" pattern="\d*" class="hp-input input-resize" id="amount" autofocus>
-                            	<span class="hp-unit">
-                                	<span class="hp-select">    
-                                    	<select id="amount-units">
-                                    		<option value="ounces">ounce</option>
-                                    		<option value="shots">shot</option>
-                                    		<option value="jiggers">jigger</option>
-                                    		<option value="cups">cup</option>
-                                		</select>                                	
-                                	</span><!-- <span class="plural is-hidden">s</span></span> -->
+                        	<div class="hp-input__group hp-input__group--buttons">
+                            	<div class="hp-input__label--buttons">  
+                                	<label class="hp-input__label">I'm making </label>
+                                	<input type="text" pattern="\d*" class="hp-input input-resize" id="amount" autofocus>
+                            	</div>   
+                            	<div class="hp-input__unit hp-input__unit--buttons">
+                                	<div class="hp-buttongroup hp-buttongroup--noborder" id="amount-units">
+                                		<input type="radio" id="bg2_1" name="bg2" value="shots" checked>
+                                		<label for="bg2_1">
+                                    		shot<span class="plural is-hidden">s</span>
+                                    		<svg class="icon"><use xlink:href="#icon-shot"></use></svg>
+                                    		<span class="hp-button__conversion">1 fluid oz</span>
+                                		</label>
+                                		<input type="radio" id="bg2_2" name="bg2" value="jiggers">
+                                		<label for="bg2_2">
+                                    		jigger<span class="plural is-hidden">s</span>
+                                    		<svg class="icon"><use xlink:href="#icon-jigger"></use></svg>
+                                    		<span  class="hp-button__conversion">1.5 fluid oz</span>
+                                		</label>
+                                		<input type="radio" id="bg2_3" name="bg2" value="cups">
+                                		<label for="bg2_3">
+                                    		cup<span class="plural is-hidden">s</span>
+                                    		<svg class="icon icon-cup"><use xlink:href="#icon-cup"></use></svg>
+                                    		<span class="hp-button__conversion">1 fluid oz</span>
+                                		</label>
+                            		</div>                                	
+                            	</div>
                         	</div>
                         	<div class="hp-input__group">   
                             	<label class="hp-input__label">I'm starting with <span data-visibility="abv">ABV</span></label>
@@ -205,7 +237,7 @@
                             <div class="hp-result__text">of water.</div>
                 		</div>
                     	<div class="hp-error">  
-                        	<span data-error="1" class="is-hidden">You need to make more than 0 ounces.</span>
+                        	<span data-error="1" class="is-hidden">Please enter an amount.</span>
                         	<span data-error="2" class="is-hidden">Your desired ABV can't be more than starting ABV. Let's not get ahead of ourselves, that's called distilling.</span>
                     	</div>
                 	</div>

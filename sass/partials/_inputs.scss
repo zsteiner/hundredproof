@@ -12,15 +12,61 @@
     &__group {
         margin-bottom: 1em;
         font-size: 1.25rem;
+        
+        &--buttons {
+            display: flex;
+        }
     }
 
     &__label {
+        margin-right: .5em;
         
+        &--buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
-    &__units {
-        
+    &__unit {
+        .hp-buttongroup {
+            font-size: .875rem;
+            flex: 0 1 auto;
+            
+            label {
+                flex: auto;
+                margin-left: spacer(.5);
+            }
+            
+            .icon {
+                display: block;
+                margin: .5em auto;
+                font-size: 1.75em;
+            }
+        }
+
+        &--buttons {
+            display: flex;
+            flex-wrap: wrap;
+            flex: auto;
+            padding: 0 spacer(1);
+        }
     }
+}
+
+.hp-button__conversion {
+    margin-top: .5em;
+    display: block;  
+    
+    &:before {
+        content: "{";
+        margin-right: .1em;
+    } 
+
+    &:after {
+        content: "}";
+        margin-left: .1em;
+    } 
 }
 
 .has-error {
@@ -30,11 +76,16 @@
 .hp-buttongroup {
     $bg-color: $default;
 
-    width: 100%;
     display: flex;
-    font-size: 1.25rem;
-    margin-top: spacer(2.5);
+    width: auto;
     font-weight: 700;
+    font-size: 1rem;
+    
+    &--main {
+        font-size: 1.25rem;
+        margin-top: spacer(2.5);    
+        width: 100%;
+    }
     
     label {
         display: block;
@@ -53,8 +104,24 @@
 
         input:checked + label {
             background: $bg-color;
-            color: white;
+            color: $white;
+        }
+    
+    &--noborder {
+        
+        label {
+            border: 0;
+            padding: spacer(.75) spacer(.5);
+            margin-right: 0;
+            border-radius: .5em; 
+            color: tint($default, 65%);
         }    
+
+        input:checked + label {
+            background: none;
+            color: $default;
+        }
+    }    
 }
 
 .hp-select {
@@ -63,6 +130,7 @@
 	position:relative;
 	overflow: hidden;
 	width: auto;
+	height: 2.875em;
 	margin-left: .35em;
 	background: white url(../images/down.svg) no-repeat;
 	padding: .5em 1.5em .5em .5em;
@@ -79,6 +147,7 @@
     	background:transparent;
     	-webkit-appearance:none;
         color: $info;
+        font-family: $font-family-serif;
 
         &:focus {
         	outline:none;

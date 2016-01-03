@@ -10,7 +10,7 @@ var amount = 1,
 
 //Conversion    
 var ozToTeaspoons = 0.1666666666666667,
-    ozToCups = 8;
+    ozToCups = 16;
     ozToJigger = 1.5;
 
 function errorHandler(errorCode) {
@@ -36,48 +36,15 @@ function errorHandler(errorCode) {
     }
 }
 
-function isPlural(state) {
-    
-    if(state === true && $('#amount-units').is('.is-plural') ) {
-        return;
-    }
-
-    else if(state === true) {
-        $('#amount-units').find('option').append('s');
-        $('#amount-units').addClass('is-plural');
-    }
-
-    else {
-        $('#amount-units.is-plural').find('option').each(function(){
-           var optionText = $(this).text();
-           $(this).text(optionText.slice(0, -1));
-        });
-        
-        $('#amount-units').removeClass('is-plural');
-    }
-}
-
 function plural(target, value) {    
-    value = parseFloat(value);
+    value = parseFloat(value).toFixed(2);
     
-    if(value === 1) {
-        target.next('.hp-unit').children('.plural').addClass('is-hidden');
+    if(value === "1.00") {
+        target.parents('.hp-input__group, .hp-result__group').find('.plural').addClass('is-hidden');
     }
     
     else {
-        target.next('.hp-unit').children('.plural').removeClass('is-hidden');    
-    }
-}
-
-function pluralSelect(target, value) {    
-    value = parseFloat(value);
-    
-    if(value === 1) {
-        isPlural(false);    
-    }
-    
-    else {
-        isPlural(true);    
+        target.parents('.hp-input__group, .hp-result__group').find('.plural').removeClass('is-hidden');    
     }
 }
 
@@ -127,8 +94,6 @@ function data() {
     desiredABV = $('#abv-desired').val();
     
     convert();
-    pluralSelect($('#amount'), amount);
-
     
     amount = parseFloat(amount);
     startingABV = parseFloat(startingABV);
@@ -155,18 +120,18 @@ function results() {
         $('.hp-results').removeClass('is-hidden'); 
     }
 
-    plural($('#result-oz'), amountWaterOz.toFixed(2));
+    plural($('#result-oz'), amountWaterOz);
     $('#result-oz').text(+(amountWaterOz).toFixed(2));
 
     if(amountWaterOz >= 2 ) {
-        plural($('#result-translate'), amountWaterCups.toFixed(2));
+        plural($('#result-translate'), amountWaterCups);
         $('#result-translate').text(+(amountWaterCups).toFixed(2));
         $('#result-cups').removeClass('is-hidden');
         $('#result-teaspoons').addClass('is-hidden');
     }
     
     else {
-        plural($('#result-translate'), amountWaterTeaspoon.toFixed(2));
+        plural($('#result-translate'), amountWaterTeaspoon);
         $('#result-translate').text(+(amountWaterTeaspoon).toFixed(2));    
         $('#result-teaspoons').removeClass('is-hidden');
         $('#result-cups').addClass('is-hidden');
@@ -206,10 +171,14 @@ $('.hp-input').keyup(function(){
     dilute();
     results();   
     
-    plural($(this), value);
+    if($(this).is('#amount')) {
+        plural($(this), value);    
+    }
 });
 
-$('#amount-units').change(function(){
+$('#amount-units input').click(function(){
+    amountUnits = $(this).val();
+
     data();
     dilute();
     results();    

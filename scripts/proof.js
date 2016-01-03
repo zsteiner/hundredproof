@@ -14,12 +14,11 @@ function errorHandler(errorCode) {
     $('[data-error="'+ errorCode + '"]').removeClass('is-hidden').siblings().addClass('is-hidden');
     
     if (errorCode > 0) {
-       $('.hp-button').addClass('is-hidden');
+       //$('.hp-results').addClass('is-hidden');
     }
     
     else {
        $('[data-error]').addClass('is-hidden');
-       $('.hp-button').removeClass('is-hidden'); 
     }
     
     if (errorCode === 0) { 
@@ -28,12 +27,12 @@ function errorHandler(errorCode) {
     
     else if (errorCode === 1) {
         $('#amount').addClass('has-error');
-        $('.hp-result').addClass('is-hidden');
+        $('.hp-results').addClass('is-hidden');
     }
 
     else if (errorCode === 2) {
         $('#abv-starting, #abv-desired').addClass('has-error');
-        $('.hp-result').addClass('is-hidden');
+        $('.hp-results').addClass('is-hidden');
     }
 
     else {
@@ -54,9 +53,46 @@ function single(target, value) {
 }
 
 function convert() {
+    //console.log(amount);
+    //console.log(startingABV);
+    //console.log(desiredABV);
+
+    if(isNaN(amount)) {
+        amount = 0;
+        startingABV = 0;
+        desiredABV = 0;
+    }
+
+    else if(isNaN(startingABV)) {
+        amount = 0;
+        startingABV = 0;
+        desiredABV = 0;
+    }
+
+    else if(isNaN(desiredABV)) {
+        amount = 0;
+        startingABV = 0;
+        desiredABV = 0;
+    }
+
+    else {
+        amountWaterOz = ((startingABV - desiredABV) / desiredABV) * amount;
+        amountWaterTeaspoon = amountWaterOz / ozToTeaspoons;
+        amountWaterCups = amountWaterOz / ozToCups;        
+    }
+}
+
+function data() {
+    amount = $('#amount').val();
+    startingABV = $('#abv-starting').val();
+    desiredABV = $('#abv-desired').val();
+    
     amount = parseFloat(amount);
     startingABV = parseFloat(startingABV);
-    desiredABV = parseFloat(desiredABV);
+    desiredABV = parseFloat(desiredABV);        
+}
+
+function results() {
 
     if(amount <= 0) {
         errorHandler(1);
@@ -72,16 +108,10 @@ function convert() {
         amountWaterOz = ((startingABV - desiredABV) / desiredABV) * amount;
         amountWaterTeaspoon = amountWaterOz / ozToTeaspoons;
         amountWaterCups = amountWaterOz / ozToCups;
+        
+        $('.hp-results').removeClass('is-hidden'); 
     }
-}
 
-function data() {
-    amount = $('#amount').val();
-    startingABV = $('#abv-starting').val();
-    desiredABV = $('#abv-desired').val();    
-}
-
-function results() {
     single($('#result-oz'), amountWaterOz);
     $('#result-oz').text(+(amountWaterOz).toFixed(2));
     
@@ -132,13 +162,6 @@ $('.hp-input').keyup(function(){
     data();
     setTimeout(convert(), 1000);
     results();   
+    
     single($(this), value);
-});
-
-$('#convert').click(function(){
-   $('.hp-result').removeClass('is-hidden'); 
-   
-   data();
-   convert();
-   results();   
 });

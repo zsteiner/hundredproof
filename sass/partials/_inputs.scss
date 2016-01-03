@@ -1,15 +1,17 @@
 .hp-input {
     background: none;
-    font-size: 1em;
+    font-size: 1.25em;
     width: 1em;
     border: none;
-    border-bottom: .15em dotted $info;
+    color: $info;
+    border-bottom: .15rem dashed $info;
     text-align: center;
+    line-height: .5;
+    font-family: $font-family-script;
     
     &__group {
-        line-height: 1.5;
-        margin: 1em 0;
-        font-size: 1.5em;
+        margin-bottom: 1em;
+        font-size: 1.25rem;
     }
 
     &__label {
@@ -26,19 +28,21 @@
 }
 
 .hp-buttongroup {
-    $bg-color: $secondary;
+    $bg-color: $default;
 
     width: 100%;
     display: flex;
-    margin-bottom: spacer(2);
+    font-size: 1.25rem;
+    margin-top: spacer(2.5);
+    font-weight: 700;
     
     label {
         display: block;
-        flex: 1 0 auto;
+        flex: 1 0 50%;
         text-align: center;
         padding: .5em;
         color: $bg-color;
-        border: .1em solid $bg-color;
+        border: 1px solid $bg-color;
         cursor: pointer;
     }
     

@@ -1,0 +1,61 @@
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: .75em;
+    line-height: 1.2;
+}
+
+.hp-header {
+    padding: 1rem 0;
+    text-align: center;
+    color: $white;
+    background: $primary url('../../images/hp-bottles.svg') repeat-x bottom;
+    background-size: auto 4em;    
+    margin: 0;
+    overflow: auto;
+}
+
+.hp-subheader {
+    padding: spacer(3) spacer(1);
+    background: $black;
+    color: $white;
+    text-align: center;
+
+    .hp-heading--subheading {
+        color: $white;
+    }
+}
+
+.hp-heading {
+    font-family: $font-family-heading;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: $default;
+    text-align: center;
+    font-style: normal;
+    
+    &--logo {
+        color: $white;
+        margin-bottom: 2em;
+        
+        svg {
+            height: 5em;
+            width: auto;
+            fill: currentColor;
+        }
+    }
+}

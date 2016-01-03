@@ -2,32 +2,115 @@
 @import "../../global/sass/reset";
 @import "../../global/sass/utility";
 @import "../../global/sass/variables";
-@import "../../global/sass/footer-sticky";
-@import "../../global/sass/typography";
+@import "partials/footer-sticky";
+@import "partials/variables";
+
+body {
+    font-family: $font-family-serif;
+    font-style: italic;
+}
 
 .hp-app {
     margin: 0 auto;
-    max-width: 32rem;
-    padding: spacer(1);
+    max-width: 64rem;
+    padding: 0 spacer(1) spacer(2);
+    color: $black;
+
+    &__row {
+        display: flex;        
+
+        @include media($mobile) {
+            display: block;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 50%;
+        
+        &:first-child {
+            border-right: 1px solid lighten($info, 25%);
+        }
+        
+        .hp-heading {
+            margin-bottom: 1.5em;
+        }
+        
+        @include media($mobile) {
+            flex: none;
+            width: 100%;
+            text-align: center;
+            
+            &:first-child {
+                border-right: 0;
+            }
+            
+            &:last-of-type {
+                border-top: 1px solid lighten($info, 15%);
+            }
+        }
+    }
+
+    @include media($mobile) {
+        padding: 0 spacer(.5) spacer(2);
+    }
+
 }
 
-.hp-result {
-    margin: spacer(2) 0;
-    font-size: 1.25em;
-    line-height: 1.5;
+.hp-inputs, 
+.hp-results, 
+.hp-error {
+    flex: 0 0 auto;
+    align-self: center;
+    padding: spacer(1) 0;
+}
+
+.hp-results {
+    text-align: center;
+
+    @include media($mobile) {
+        padding-top: spacer(2);
+    }
+}
+
+.hp-result {            
+    &__group, 
+    &__divider,
+    &__text {
+        font-size: 1.25rem;
+        margin-bottom: 1.5em;
+    }
+    
+    &__group {
+        font-weight: 700;
+    }
+    
+    &__divider {
+        text-transform: uppercase;
+
+        &:before, 
+        &:after {
+            content: " - ";
+        }
+    }
 }
 
 .hp-error {
     color: $alert;
-    font-size: 1.25em;
-    line-height: 1.25;
-    margin: spacer(1) 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: spacer(1) spacer(4);
+    text-align: center;
 }
 
 .hp-instructions {
-    font-size: .875em;
-    line-height: 1.5;
-    margin-bottom: 1em;
+    font-size: 1em;
+    line-height: 1.25;
+    
+    &:last-child {
+        margin-top: 1em;
+    }    
 }
 
 [data-visibility="proof"] [data-visibility="abv"] {
@@ -38,5 +121,32 @@
     display: none;
 }
 
+.hp-section {
+    &--heading {
+        padding: spacer(3) 0;
+    }  
+}
+
+footer {
+    display: flex;
+    background: url('../../images/hp-bottles.svg') repeat-x top;
+    background-size: auto 4em;
+    padding: 0;
+    color: $white;
+}
+
+.hp-footer {
+    flex: 0 100%;
+    align-self: flex-end;
+    background-color: $black;
+    padding: spacer(.5) spacer(1);
+    text-align: center;
+    
+    a {
+        color: $primary;
+        text-decoration: none;
+    }
+}
 
 @import "partials/inputs";
+@import "partials/headings";

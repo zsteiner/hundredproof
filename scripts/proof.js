@@ -1,5 +1,7 @@
 var amount = 1,
-    amountUnits = "proof",
+    amountUnits = "ounce",
+//    appFunction = "dilute",
+    startingUnits = "proof",
     startingABV = 100,
     desiredABV = 80,
     amountWaterOz = 0,
@@ -9,20 +11,14 @@ var amount = 1,
 //Conversion    
 var ozToTeaspoons = 0.1666666666666667,
     ozToCups = 8;
+    ozToJigger = 1.5;
 
 function errorHandler(errorCode) {
     $('[data-error="'+ errorCode + '"]').removeClass('is-hidden').siblings().addClass('is-hidden');
     
-    if (errorCode > 0) {
-       //$('.hp-results').addClass('is-hidden');
-    }
-    
-    else {
-       $('[data-error]').addClass('is-hidden');
-    }
-    
     if (errorCode === 0) { 
         $('.hp-input').removeClass('has-error');
+        $('[data-error]').addClass('is-hidden');
     }
     
     else if (errorCode === 1) {
@@ -40,23 +36,55 @@ function errorHandler(errorCode) {
     }
 }
 
+function isPlural(state) {
+    
+    if(state === true && $('#amount-units').is('.is-plural') ) {
+        return;
+    }
+
+    else if(state === true) {
+        $('#amount-units').find('option').append('s');
+        $('#amount-units').addClass('is-plural');
+    }
+
+    else {
+        $('#amount-units.is-plural').find('option').each(function(){
+           var optionText = $(this).text();
+           $(this).text(optionText.slice(0, -1));
+        });
+        $('#amount-units').removeClass('is-plural');
+    }
+}
+
 function single(target, value) {    
     value = parseFloat(value);
     
     if(value === 1) {
         target.next('.hp-unit').children('.plural').addClass('is-hidden');
+        isPlural(false);    
     }
     
     else {
         target.next('.hp-unit').children('.plural').removeClass('is-hidden');    
+        isPlural(true);    
     }
 }
 
 function convert() {
-    //console.log(amount);
-    //console.log(startingABV);
-    //console.log(desiredABV);
+    if (amountUnits === "cups") {
+        amount = amount * ozToCups;
+    }
 
+    else if (amountUnits === "jiggers") {
+        amount = amount * ozToJigger;
+    }
+    
+    else {
+        return;
+    }    
+}
+
+function dilute() {
     if(isNaN(amount)) {
         amount = 0;
         startingABV = 0;
@@ -87,6 +115,8 @@ function data() {
     startingABV = $('#abv-starting').val();
     desiredABV = $('#abv-desired').val();
     
+    convert();
+    
     amount = parseFloat(amount);
     startingABV = parseFloat(startingABV);
     desiredABV = parseFloat(desiredABV);        
@@ -112,18 +142,18 @@ function results() {
         $('.hp-results').removeClass('is-hidden'); 
     }
 
-    single($('#result-oz'), amountWaterOz);
+    single($('#result-oz'), amountWaterOz.toFixed(2));
     $('#result-oz').text(+(amountWaterOz).toFixed(2));
-    
+
     if(amountWaterOz >= 2 ) {
-        single($('#result-translate'), amountWaterCups);
+        single($('#result-translate'), amountWaterCups.toFixed(2));
         $('#result-translate').text(+(amountWaterCups).toFixed(2));
         $('#result-cups').removeClass('is-hidden');
         $('#result-teaspoons').addClass('is-hidden');
     }
     
     else {
-        single($('#result-translate'), amountWaterTeaspoon);
+        single($('#result-translate'), amountWaterTeaspoon.toFixed(2));
         $('#result-translate').text(+(amountWaterTeaspoon).toFixed(2));    
         $('#result-teaspoons').removeClass('is-hidden');
         $('#result-cups').addClass('is-hidden');
@@ -137,7 +167,7 @@ $('input[data-visibility]').click(function(){
     
     $('.hp-inputs').attr('data-visibility', visibilityType);
     
-    if (amountUnits === 'abv' && visibilityType === 'proof') {
+    if (startingUnits === 'abv' && visibilityType === 'proof') {
         startingABV = startingABV * 2;
         desiredABV = desiredABV * 2;
         
@@ -153,15 +183,23 @@ $('input[data-visibility]').click(function(){
         $('#abv-desired').val(desiredABV);    
     }    
     
-    amountUnits = visibilityType;
+    startingUnits = visibilityType;
 });
 
 $('.hp-input').keyup(function(){
-    value = $(this).val();
-
+    var value = $(this).val();
+    
     data();
-    setTimeout(convert(), 1000);
+    dilute();
     results();   
     
     single($(this), value);
+});
+
+$('#amount-units').change(function(){
+    amountUnits = $(this).val();
+
+    data();
+    dilute();
+    results();    
 });

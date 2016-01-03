@@ -103,7 +103,7 @@ body {
 
 .hp-app {
   margin: 0 auto;
-  max-width: 64rem;
+  max-width: 56rem;
   padding: 0 1rem 2rem;
   color: #1F1304; }
   .hp-app__row {
@@ -266,6 +266,33 @@ footer {
   .hp-buttongroup input:checked + label {
     background: #3E2508;
     color: white; }
+
+.hp-select {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  margin-left: .35em;
+  background: white url(../images/down.svg) no-repeat;
+  padding: .5em 1.5em .5em .5em;
+  background-position: right 50%;
+  line-height: 1.75;
+  border-bottom: 0.15rem dashed #6A664C; }
+  .hp-select select {
+    margin: 0;
+    padding: 0;
+    width: 120%;
+    height: 1.5em;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    color: #6A664C; }
+    .hp-select select:focus {
+      outline: none; }
+    .hp-select select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000; }
 
 .hp-button {
   background-color: #4A90E2;

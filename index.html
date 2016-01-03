@@ -167,7 +167,15 @@
                         	<div class="hp-input__group">   
                             	<label class="hp-input__label">I'm making</label>
                             	<input type="text" pattern="\d*" class="hp-input input-resize" id="amount" autofocus>
-                            	<span class="hp-unit">ounce<span class="plural is-hidden">s</span></span>.
+                            	<span class="hp-unit">
+                                	<span class="hp-select">    
+                                    	<select id="amount-units">
+                                    		<option value="ounces">ounce</option>
+                                    		<option value="shots">shot</option>
+                                    		<option value="jiggers">jigger</option>
+                                    		<option value="cups">cup</option>
+                                		</select>                                	
+                                	</span><!-- <span class="plural is-hidden">s</span></span> -->
                         	</div>
                         	<div class="hp-input__group">   
                             	<label class="hp-input__label">I'm starting with <span data-visibility="abv">ABV</span></label>

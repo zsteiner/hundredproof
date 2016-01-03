@@ -55,8 +55,42 @@
             background: $bg-color;
             color: white;
         }    
-
 }
+
+.hp-select {
+    display: inline-block;
+	vertical-align: top;
+	position:relative;
+	overflow: hidden;
+	width: auto;
+	margin-left: .35em;
+	background: white url(../images/down.svg) no-repeat;
+	padding: .5em 1.5em .5em .5em;
+	background-position: right 50%;
+	line-height: 1.75;
+    border-bottom: .15rem dashed $info;
+
+    select {
+    	margin:0;
+    	padding:0;
+    	width:120%;
+    	height:1.5em;
+    	border:0;
+    	background:transparent;
+    	-webkit-appearance:none;
+        color: $info;
+
+        &:focus {
+        	outline:none;
+        }
+        
+        &:-moz-focusring {
+        	color:transparent;
+        	text-shadow:0 0 0 #000;
+        }
+    }
+}
+
 
 .hp-button {
     background-color: $secondary;

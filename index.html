@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hundred Proof: Dilute</title>
+		<title>Hundred Proof</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/proof.css" type="text/css" media="all">
         <link href='https://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
@@ -167,81 +167,16 @@
                     <p class="hp-instructions">Enter your quantity, starting proof/ABV below for boozy, arithmetical awesomeness. Let's get this party started.</p>
     		</section>
     		<div class="hp-app">
-        		<section class="hp-section hp-section--heading">    
-                	<h4 class="hp-heading">Choose One:</h4>
-
-                	<div class="hp-buttongroup hp-buttongroup--main">    
-                    	<input type="radio" id="bg1_1" name="bg1" data-visibility="abv">
-                    	<label for="bg1_1">ABV</label>
-                    	<input type="radio" id="bg1_2" name="bg1" data-visibility="proof" checked>
-                    	<label for="bg1_2">Proof</label>
-                	</div>
-        		</section>   
-            	<section class="hp-section hp-app__row">
-                	<div class="hp-app__col"> 
-                    	<div class="hp-inputs" data-visibility="proof"> 
-                        	<h4 class="hp-heading">What are we making today?</h3>  
-                        	<div class="hp-input__group hp-input__group--buttons">
-                            	<div class="hp-input__label--buttons">  
-                                	<label class="hp-input__label">I'm making </label>
-                                	<input type="text" pattern="\d*" class="hp-input input-resize" id="amount" autofocus>
-                            	</div>   
-                            	<div class="hp-input__unit hp-input__unit--buttons">
-                                	<div class="hp-buttongroup hp-buttongroup--noborder" id="amount-units">
-                                		<input type="radio" id="bg2_1" name="bg2" value="shots" checked>
-                                		<label for="bg2_1">
-                                    		shot<span class="plural is-hidden">s</span>
-                                    		<svg class="icon"><use xlink:href="#icon-shot"></use></svg>
-                                    		<span class="hp-button__conversion">1 fluid oz</span>
-                                		</label>
-                                		<input type="radio" id="bg2_2" name="bg2" value="jiggers">
-                                		<label for="bg2_2">
-                                    		jigger<span class="plural is-hidden">s</span>
-                                    		<svg class="icon"><use xlink:href="#icon-jigger"></use></svg>
-                                    		<span  class="hp-button__conversion">1.5 fluid oz</span>
-                                		</label>
-                                		<input type="radio" id="bg2_3" name="bg2" value="cups">
-                                		<label for="bg2_3">
-                                    		cup<span class="plural is-hidden">s</span>
-                                    		<svg class="icon icon-cup"><use xlink:href="#icon-cup"></use></svg>
-                                    		<span class="hp-button__conversion">8 fluid oz</span>
-                                		</label>
-                            		</div>                                	
-                            	</div>
-                        	</div>
-                        	<div class="hp-input__group">   
-                            	<label class="hp-input__label">I'm starting with <span data-visibility="abv">ABV</span></label>
-                            	<input type="text" pattern="\d*" class="hp-input input-resize" id="abv-starting" value="100"><span class="hp-input__units"><span data-visibility="abv">%</span>
-                                	<span data-visibility="proof">proof</span>.
-                            	</span>
-                        	</div>
-                        	<div class="hp-input__group">   
-                            	<label class="hp-input__label">I want to end with <span data-visibility="abv">ABV</span></label>
-                            	<input type="text" pattern="\d*" class="hp-input input-resize" id="abv-desired" value="80"><span class="hp-input__units"><span data-visibility="abv">%</span>
-                            	<span data-visibility="proof">proof</span></span>.
-                        	</div>
-                    	</div>
-                	</div>
-                	<div class="hp-app__col">
-                		<div class="hp-results is-hidden"> 
-                    		<h4 class="hp-heading">You should add...</h3>
-                    		<div class="hp-result__group">   
-                        		<span class="hp-result__number" id="result-oz"></span>
-                        		<span class="hp-unit">ounce<span class="plural is-hidden">s</span></span>
-                    		</div>
-                    		<div class="hp-result__divider">or about</div>
-                            <div class="hp-result__group">   
-                        		<span class="hp-result__number" id="result-translate"></span>
-                        		<span class="hp-unit"><span id="result-teaspoons">teaspoon</span><span id="result-cups" class="is-hidden">cup</span><span class="plural is-hidden">s</span></span>
-                            </div>            		
-                            <div class="hp-result__text">of water.</div>
+        		<section class="hp-section hp-section--heading">
+            		<div class="hp-selector">   
+                		<div class="hp-selector__option">
+                            <a class="hp-selector__link" href="dilute.html">Dilute</a>                    		
                 		</div>
-                    	<div class="hp-error">  
-                        	<span data-error="1" class="is-hidden">Please enter an amount.</span>
-                        	<span data-error="2" class="is-hidden">Your desired ABV can't be more than starting ABV. Let's not get ahead of ourselves, that's called distilling.</span>
-                    	</div>
-                	</div>
-            	</section>
+                		<div class="hp-selector__option">
+                    		<a class="hp-selector__link" href="scale.html">Scale</a>
+                		</div>
+            		</div>
+        		</section>   
     		</div>
     		
 		</div>

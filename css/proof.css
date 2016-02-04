@@ -388,6 +388,14 @@ footer {
       text-shadow: 0 0 0 #000; }
 
 .hp-button {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  width: auto;
+=======
+>>>>>>> parent of c58c8b8... Starting recipe scaling feature
+=======
+  width: intrinsic;
+>>>>>>> parent of 1bb41ef... Work on Scaling branch
   background-color: #4A90E2;
   border: 0;
   color: white;
@@ -404,6 +412,25 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-appearance: none;
   margin: 0; }
 
+<<<<<<< HEAD
+.hp-ingredient {
+  counter-increment: ingredients;
+  position: relative; }
+  .hp-ingredient::before {
+    content: counter(ingredients);
+    position: absolute;
+    top: 50%;
+    left: -1.5em; }
+  .hp-ingredient .hp-input {
+    width: 100%; }
+  .hp-ingredient__list {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+    counter-reset: ingredients; }
+
+=======
+>>>>>>> parent of c58c8b8... Starting recipe scaling feature
 h1 {
   font-size: 2rem; }
 

@@ -305,21 +305,6 @@ footer {
         -ms-flex: auto;
             flex: auto;
     padding: 0 1rem; }
-  .hp-input--ingredient {
-    text-align: left;
-    width: auto;
-    padding-left: .5em;
-    text-indent: .5em; }
-    .hp-input--ingredient::-webkit-input-placeholder {
-      line-height: 2; }
-    .hp-input--ingredient::-moz-placeholder {
-      line-height: 2; }
-    .hp-input--ingredient:-ms-input-placeholder {
-      line-height: 2; }
-    .hp-input--ingredient::-ms-input-placeholder {
-      line-height: 2; }
-    .hp-input--ingredient:placeholder-shown {
-      line-height: 2; }
 
 .hp-button__conversion {
   margin-top: .5em;
@@ -404,9 +389,13 @@ footer {
 
 .hp-button {
 <<<<<<< HEAD
+<<<<<<< HEAD
   width: auto;
 =======
 >>>>>>> parent of c58c8b8... Starting recipe scaling feature
+=======
+  width: intrinsic;
+>>>>>>> parent of 1bb41ef... Work on Scaling branch
   background-color: #4A90E2;
   border: 0;
   color: white;
@@ -416,11 +405,6 @@ footer {
   font-size: 1.25em; }
   .hp-button--block {
     margin: 1em 0; }
-  .hp-button--add {
-    background-color: transparent;
-    color: #1F1304; }
-  .hp-button--submit {
-    margin-top: 1rem; }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -437,6 +421,8 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     top: 50%;
     left: -1.5em; }
+  .hp-ingredient .hp-input {
+    width: 100%; }
   .hp-ingredient__list {
     -webkit-align-self: flex-start;
         -ms-flex-item-align: start;

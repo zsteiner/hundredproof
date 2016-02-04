@@ -171,42 +171,18 @@
                         <h4 class="hp-heading">What are we making today?</h3>  
                     	<div class="hp-input__group hp-input__group--center">   
                         	<label class="hp-input__label">I'm making a </label>
-                        	<input type="text" pattern="\d*" class="hp-input input-resize" id="drink-name" value="martini">
-                        	<label class="hp-input__label"> and I want to scale it </label>
-                        	<input type="text" pattern="\d*" class="hp-input input-resize" id="scale-amount" value="2">
-                        	<label class="hp-input__label"> times.</label>
+                        	<input type="text" pattern="\d*" class="hp-input input-resize" id="drink-name" value="martini"><span class="hp-input__units">
+                        	</span>
                     	</div>
         		</section>   
             	<section class="hp-section hp-app__row">
                 	<div class="hp-app__col"> 
                     	<ul class="hp-inputs hp-ingredient__list"> 
                         	<li class="hp-input__group hp-ingredient">   
-                            	<input type="text" pattern="\d*" class="hp-input input-resize hp-ingredient__amount" value="1">
-                            	<div class="hp-select"> 
-                                	<select class="hp-ingredient__unit">
-                                    	<option value="ounce">ounce</option>
-                                    	<option value="ounce">cup</option>
-                                    	<option value="ounce">bottle</option>
-                                    	<option value="ounce">count</option>
-                                	</select>
-                            	</div>
-                            	<input type="text" class="hp-input hp-input--ingredient hp-ingredient__name" placeholder="gin">
-                        	</li>
-                        	<li class="hp-input__group hp-ingredient is-template is-hidden">   
-                            	<input type="text" pattern="\d*" class="hp-input input-resize hp-ingredient__amount" value="1">
-                            	<div class="hp-select"> 
-                                	<select class="hp-ingredient__unit">
-                                    	<option value="ounce">ounce</option>
-                                    	<option value="ounce">cup</option>
-                                    	<option value="ounce">bottle</option>
-                                    	<option value="ounce">count</option>
-                                	</select>
-                            	</div>
-                            	<input type="text" class="hp-input hp-input--ingredient hp-ingredient__name" placeholder="gin">
+                            	<input type="text" pattern="\d*" class="hp-input" id="abv-desired"><span class="hp-input__units"></span>
                         	</li>
                     	</ul>
-                    	<button class="hp-button hp-button--add">+ Add Another Ingredient</button>
-                    	<button class="hp-button hp-button--submit">Scale My Drink</button>
+                    	<button class="hp-button">Add Another Ingredient</button>
                 	</div>
                 	<div class="hp-app__col">
                 		<div class="hp-results is-hidden"> 

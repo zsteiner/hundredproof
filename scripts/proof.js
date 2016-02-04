@@ -5,35 +5,13 @@ var amount = 1,
     startingABV = 100,
     desiredABV = 80,
     amountWaterOz = 0,
-    amountWaterTeaspoon = 0,
-    amountWaterCups = 0,
-    ingredients ;
+    amountWaterTeaspoon = 0;
+    amountWaterCups = 0;
 
 //Conversion    
 var ozToTeaspoons = 0.1666666666666667,
     ozToCups = 8;
     ozToJigger = 1.5;
-
-var ingredientsBlank = [
-    {
-        "amount": "",
-        "name": "",
-        "unit": ""
-    }
-];
-
-function checkLocalStorage() {   
-    ingredients = localStorage.getItem('ingredients');
-    ingredients = JSON.parse(ingredients);
-    
-    if ($.isEmptyObject(ingredients)) {
-        ingredients = ingredientsBlank;        
-    }
-}
-
-function storeLocal() {
-    localStorage.setItem('ingredients', JSON.stringify(ingredients));
-}
 
 function errorHandler(errorCode) {
     $('[data-error="'+ errorCode + '"]').removeClass('is-hidden').siblings().addClass('is-hidden');
@@ -110,7 +88,7 @@ function dilute() {
     }
 }
 
-function diluteData() {
+function data() {
     amount = $('#amount').val();
     startingABV = $('#abv-starting').val();
     desiredABV = $('#abv-desired').val();
@@ -122,7 +100,7 @@ function diluteData() {
     desiredABV = parseFloat(desiredABV);        
 }
 
-function diluteResults() {
+function results() {
 
     if(amount <= 0) {
         errorHandler(1);
@@ -160,21 +138,6 @@ function diluteResults() {
     }    
 }
 
-function storeIngredients(thisIngredient) {
-    var ingredientAmount = thisIngredient.find('.hp-ingredient__amount').val();
-    var ingredientName = thisIngredient.find('.hp-ingredient__name').val();
-    var ingredientUnit = thisIngredient.find('.hp-ingredient__unit').val();
-
-    ingredients.amount = ingredientAmount;
-    ingredients.name = ingredientName;
-    ingredients.unit = ingredientUnit;
-    
-    console.log(ingredientAmount + ingredientUnit + ingredientName);
-    storeLocal();
-}
-
-checkLocalStorage();
-
 $('.input-resize').autosizeInput();
 
 $('input[data-visibility]').click(function(){
@@ -204,9 +167,9 @@ $('input[data-visibility]').click(function(){
 $('.hp-input').keyup(function(){
     var value = $(this).val();
     
-    diluteData();
+    data();
     dilute();
-    diluteResults();   
+    results();   
     
     if($(this).is('#amount')) {
         plural($(this), value);    
@@ -216,18 +179,7 @@ $('.hp-input').keyup(function(){
 $('#amount-units input').click(function(){
     amountUnits = $(this).val();
 
-    diluteData();
+    data();
     dilute();
-    diluteResults();   
-});
-
-$('.hp-button--add').click(function(){
-   var thisIngredient = $('.hp-ingredient.is-template').prev('.hp-ingredient');
-
-   storeIngredients(thisIngredient);
-   console.log(ingredients);
-   $(this).prev('.hp-ingredient__list').children('.hp-ingredient.is-template').clone().insertBefore('.hp-ingredient.is-template').removeClass('is-template is-hidden');
-});
-
-$('.hp-button--submit').click(function(){
+    results();    
 });

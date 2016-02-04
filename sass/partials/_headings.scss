@@ -20,13 +20,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .hp-header {
-    padding: 1rem 0;
     text-align: center;
-    color: $white;
     background: $primary url('../../images/hp-bottles.svg') repeat-x bottom;
     background-size: auto 4em;    
     margin: 0;
     overflow: auto;
+    padding: 1rem 0;
+    color: $white;
 }
 
 .hp-subheader {

@@ -174,8 +174,10 @@ body {
 .hp-result__group, .hp-result__divider, .hp-result__text {
   font-size: 1.25rem;
   margin-bottom: 1.5em; }
+
 .hp-result__group {
   font-weight: 700; }
+
 .hp-result__divider {
   text-transform: uppercase; }
   .hp-result__divider:before, .hp-result__divider:after {
@@ -456,13 +458,13 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2; }
 
 .hp-header {
-  padding: 1rem 0;
   text-align: center;
-  color: #FFF1E2;
   background: #F6921E url("../../images/hp-bottles.svg") repeat-x bottom;
   background-size: auto 4em;
   margin: 0;
-  overflow: auto; }
+  overflow: auto;
+  padding: 1rem 0;
+  color: #FFF1E2; }
 
 .hp-subheader {
   padding: 3rem 1rem;
@@ -507,3 +509,4 @@ h1, h2, h3, h4, h5 {
     text-decoration: none;
     font-size: 2em;
     color: #1F1304; }
+/*# sourceMappingURL=proof.css.map */

@@ -16,6 +16,10 @@
         &--buttons {
             display: flex;
         }
+
+        &--center {
+            text-align: center;
+        }
     }
 
     &__label {
@@ -51,6 +55,33 @@
             flex: auto;
             padding: 0 spacer(1);
         }
+    }
+    
+    &--ingredient {
+        text-align: left;
+        width: auto;
+        padding-left: .5em;
+        text-indent: .5em;
+        
+        &::-webkit-input-placeholder { 
+            line-height: 2;
+        }
+        
+        &::-moz-placeholder { 
+            line-height: 2;
+        }
+        
+        &:-ms-input-placeholder { 
+            line-height: 2;
+        }
+        
+        &::-ms-input-placeholder { 
+            line-height: 2;
+        }
+        
+        &:placeholder-shown { 
+            line-height: 2;
+        }        
     }
 }
 
@@ -162,16 +193,24 @@
 
 
 .hp-button {
+    width: auto;
     background-color: $secondary;
     border: 0;
     color: white;
-    display: block;
-    width: 100%;
     padding: .5em;
     font-size: 1.25em;
     
     &--block {
         margin: 1em 0;
+    }
+    
+    &--add {
+        background-color: transparent;
+        color: $black;
+    }
+
+    &--submit {
+        margin-top: spacer(1);
     }
 }
 
@@ -180,4 +219,21 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none; 
     -moz-appearance: none;
     margin: 0; 
+}
+
+.hp-ingredient {
+    counter-increment: ingredients;
+    position: relative;
+    
+    &::before {
+        content: counter(ingredients);
+        position: absolute;
+        top: 50%;
+        left: -1.5em;
+    }
+
+    &__list {
+        align-self: flex-start;        
+        counter-reset: ingredients;
+    }
 }

@@ -260,8 +260,6 @@ footer {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
-    .hp-input__group--center {
-      text-align: center; }
   .hp-input__label {
     margin-right: .5em; }
     .hp-input__label--buttons {
@@ -405,10 +403,15 @@ footer {
       text-shadow: 0 0 0 #000; }
 
 .hp-button {
+<<<<<<< HEAD
   width: auto;
+=======
+>>>>>>> parent of c58c8b8... Starting recipe scaling feature
   background-color: #4A90E2;
   border: 0;
   color: white;
+  display: block;
+  width: 100%;
   padding: .5em;
   font-size: 1.25em; }
   .hp-button--block {
@@ -425,6 +428,7 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-appearance: none;
   margin: 0; }
 
+<<<<<<< HEAD
 .hp-ingredient {
   counter-increment: ingredients;
   position: relative; }
@@ -439,6 +443,8 @@ input[type=number]::-webkit-outer-spin-button {
             align-self: flex-start;
     counter-reset: ingredients; }
 
+=======
+>>>>>>> parent of c58c8b8... Starting recipe scaling feature
 h1 {
   font-size: 2rem; }
 
@@ -486,24 +492,3 @@ h1, h2, h3, h4, h5 {
       height: 5em;
       width: auto;
       fill: currentColor; }
-
-.hp-selector {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto; }
-  .hp-selector::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .hp-selector__option {
-    text-align: center;
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%; }
-    .hp-selector__option:last-child {
-      margin-right: 0; }
-  .hp-selector__link {
-    text-decoration: none;
-    font-size: 2em;
-    color: #1F1304; }

@@ -108,7 +108,6 @@ body {
   color: #1F1304; }
   .hp-app__row {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
     @media screen and (max-width: 770px) {
@@ -116,23 +115,19 @@ body {
         display: block; } }
   .hp-app__col {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
     .hp-app__col:first-child {
       -webkit-box-flex: 1;
-      -webkit-flex: 1 0 50%;
           -ms-flex: 1 0 50%;
               flex: 1 0 50%;
       border-right: 1px solid #aba78a; }
     .hp-app__col:last-child {
       -webkit-box-flex: 1;
-      -webkit-flex: 1 0 50%;
           -ms-flex: 1 0 50%;
               flex: 1 0 50%; }
     .hp-app__col .hp-heading {
@@ -140,7 +135,6 @@ body {
     @media screen and (max-width: 770px) {
       .hp-app__col {
         -webkit-box-flex: 0;
-        -webkit-flex: none;
             -ms-flex: none;
                 flex: none;
         width: 100%;
@@ -157,12 +151,11 @@ body {
 .hp-results,
 .hp-error {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding: 1rem 0; }
 
 .hp-results {
@@ -174,8 +167,10 @@ body {
 .hp-result__group, .hp-result__divider, .hp-result__text {
   font-size: 1.25rem;
   margin-bottom: 1.5em; }
+
 .hp-result__group {
   font-weight: 700; }
+
 .hp-result__divider {
   text-transform: uppercase; }
   .hp-result__divider:before, .hp-result__divider:after {
@@ -205,7 +200,6 @@ body {
 
 footer {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background: url("../../images/hp-bottles.svg") repeat-x top;
@@ -215,12 +209,10 @@ footer {
 
 .hp-footer {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 100%;
       -ms-flex: 0 100%;
           flex: 0 100%;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   background-color: #1F1304;
   padding: 0.5rem 1rem;
   text-align: center; }
@@ -257,34 +249,28 @@ footer {
     font-size: 1.25rem; }
     .hp-input__group--buttons {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
   .hp-input__label {
     margin-right: .5em; }
     .hp-input__label--buttons {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
       -webkit-box-align: center;
-      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
   .hp-input__unit .hp-buttongroup {
     font-size: .875rem;
     -webkit-box-flex: 0;
-    -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto; }
     .hp-input__unit .hp-buttongroup label {
       -webkit-box-flex: 1;
-      -webkit-flex: auto;
           -ms-flex: auto;
               flex: auto;
       margin-left: 0.5rem; }
@@ -294,14 +280,11 @@ footer {
       font-size: 1.75em; }
   .hp-input__unit--buttons {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-flex: 1;
-    -webkit-flex: auto;
         -ms-flex: auto;
             flex: auto;
     padding: 0 1rem; }
@@ -321,7 +304,6 @@ footer {
 
 .hp-buttongroup {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: auto;
@@ -334,7 +316,6 @@ footer {
   .hp-buttongroup label {
     display: block;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 50%;
         -ms-flex: 1 0 50%;
             flex: 1 0 50%;
     text-align: center;
@@ -388,14 +369,8 @@ footer {
       text-shadow: 0 0 0 #000; }
 
 .hp-button {
-<<<<<<< HEAD
-<<<<<<< HEAD
   width: auto;
-=======
->>>>>>> parent of c58c8b8... Starting recipe scaling feature
-=======
   width: intrinsic;
->>>>>>> parent of 1bb41ef... Work on Scaling branch
   background-color: #4A90E2;
   border: 0;
   color: white;
@@ -412,7 +387,6 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-appearance: none;
   margin: 0; }
 
-<<<<<<< HEAD
 .hp-ingredient {
   counter-increment: ingredients;
   position: relative; }
@@ -424,13 +398,10 @@ input[type=number]::-webkit-outer-spin-button {
   .hp-ingredient .hp-input {
     width: 100%; }
   .hp-ingredient__list {
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     counter-reset: ingredients; }
 
-=======
->>>>>>> parent of c58c8b8... Starting recipe scaling feature
 h1 {
   font-size: 2rem; }
 
